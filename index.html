@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>妹妹的小商店</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <div class="title">妹妹的小商店</div>
+    <div class="box-container">
+        <div class="box" onclick="openNewTab('牛角包')">牛角包</div>
+        <div class="box" onclick="openNewTab('冰淇淋')">冰淇淋</div>
+        <div class="box" onclick="openNewTab('甜甜圈')">甜甜圈</div>
+        <div class="box" onclick="openNewTab('蛋挞')">蛋挞</div>
+    </div>
+
+    <script>
+        function openNewTab(content) {
+            var newTab = window.open('', '_blank');
+            newTab.document.body.style.backgroundColor = "pink";
+            newTab.document.write("<h1>" + content + "</h1>");
+            newTab.document.close();
+        }
+        
+        var qrCode = new QRious({
+            element: document.getElementById('qrcode'),
+            value: window.location.href
+        });
+    </script>
+
+    <div id="qrcode"></div>
+</body>
+</html>
+
